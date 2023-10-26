@@ -19,3 +19,13 @@
 .done {
   text-decoration: line-through;
 }
+
+.items { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete {
+  cursor: pointer;
+}

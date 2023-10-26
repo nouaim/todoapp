@@ -25,6 +25,12 @@ function App() {
     setTodos(newtodos);
   }
 
+  const handledelete = (index) => {
+    const items = [...todos];
+    items.splice(index, 1)
+    setTodos(items);
+  }
+
   console.log(todos);
 
   return (
@@ -33,8 +39,14 @@ function App() {
         <Header />
         <ul>
           {todos.map(({ text, completed }, index) => {
-            return <li className={completed ? "done" : ""} key={index} onClick={() => handledone(index)}>{text}</li>
-          })}
+            return (
+            <div className='items'>
+              <li
+                className={completed ? "done" : ""} key={index} onClick={() => handledone(index)}>{text}
+              </li>
+                <span key={index} className='delete' onClick={() => handledelete(index)}>❌</span>
+            </div>
+          )})}
         </ul>
         <input ref={inputref} placeholder='Add an item' />
         <button onClick={handletodo}>Add</button>
