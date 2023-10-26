@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Start
+
+* Clone the project and then run ```npm install```
+
+* to start the app: ```npm run start```
+
+![image](https://github.com/nouaim/todoapp/assets/29921701/612e9526-aafa-4f5b-99bd-6df58990a3d1)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
