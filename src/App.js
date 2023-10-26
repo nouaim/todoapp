@@ -14,7 +14,7 @@ function App() {
 
   const handletodo = () => {
     const text = inputref.current.value;
-    const newitem = {completed: false, text}
+    const newitem = { completed: false, text }
     setTodos([...todos, newitem]);
     inputref.current.value = ""
   }
@@ -32,8 +32,8 @@ function App() {
       <div className="todo-Container">
         <Header />
         <ul>
-          {todos.map(({text}, index) => {
-            return <li key={index} onClick={() => handledone(index)}>{text}</li>
+          {todos.map(({ text, completed }, index) => {
+            return <li className={completed ? "done" : ""} key={index} onClick={() => handledone(index)}>{text}</li>
           })}
         </ul>
         <input ref={inputref} placeholder='Add an item' />
