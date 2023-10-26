@@ -14,18 +14,26 @@ function App() {
 
   const handletodo = () => {
     const text = inputref.current.value;
-    console.log(text);
-    setTodos([...todos, text]);
+    const newitem = {completed: false, text}
+    setTodos([...todos, newitem]);
     inputref.current.value = ""
   }
+
+  const handledone = (index) => {
+    const newtodos = [...todos];
+    newtodos[index].completed = !newtodos[index].completed
+    setTodos(newtodos);
+  }
+
+  console.log(todos);
 
   return (
     <div className="App">
       <div className="todo-Container">
         <Header />
         <ul>
-          {todos.map((item) => {
-            return <li>{item}</li>
+          {todos.map(({text}, index) => {
+            return <li key={index} onClick={() => handledone(index)}>{text}</li>
           })}
         </ul>
         <input ref={inputref} placeholder='Add an item' />

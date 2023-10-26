@@ -12,4 +12,6 @@
 .todo-Container ul li {
   width: 500px;
   overflow-wrap: break-word;
+  list-style-type: "🫱";
+  cursor: pointer;
 }
